@@ -40,14 +40,21 @@ class PorterDetailPagearjuno extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Detail Porter',
-          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
-        backgroundColor: Colors.indigo.shade800,
+        title: const Text(
+          'Detail Porter',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
+        ),
         centerTitle: true,
-        elevation: 8,
-        shadowColor: Colors.indigo.withOpacity(0.7),
       ),
       body: SingleChildScrollView(
         child: Container(

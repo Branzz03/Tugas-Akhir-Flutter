@@ -32,17 +32,21 @@ class _PorterRegistrationwelirangState extends State<PorterRegristationwelirang>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
           'Porter & Guide',
           style: TextStyle(
+            color: Colors.white,
             fontSize: 22,
-            fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.indigo.shade700,
-        elevation: 10,
-        shadowColor: Colors.indigo.withOpacity(0.7),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -62,7 +66,7 @@ class _PorterRegistrationwelirangState extends State<PorterRegristationwelirang>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      'Gunung Sindoro',
+                      'Gunung Welirang',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -71,7 +75,7 @@ class _PorterRegistrationwelirangState extends State<PorterRegristationwelirang>
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'Ketinggian: 3.150 mdpl',
+                      'Ketinggian: 3.156 mdpl',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.black87,
@@ -79,7 +83,9 @@ class _PorterRegistrationwelirangState extends State<PorterRegristationwelirang>
                     ),
                     SizedBox(height: 12),
                     Text(
-                      'Gunung Sindoro merupakan salah satu gunung tertinggi di Pulau Jawa. Gunung ini menawarkan pemandangan alam yang indah dan jalur pendakian yang menantang.',
+                    'Gunung Welirang adalah gunung api yang terletak di wilayah Mojokerto, Jawa Timur. '
+                    'Gunung ini terkenal dengan pemandangan indah dan suhu dinginnya, serta pemandian air panas alami di sekitar area. '
+                    'Terdapat beberapa jalur pendakian yang dapat diambil untuk menuju puncak gunung ini.',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.black54,

@@ -62,7 +62,7 @@ class _PorterRegistrationarjunoState extends State<PorterRegristationarjuno> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Text(
-                      'Gunung Sindoro',
+                      'Gunung Arjuno',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -71,7 +71,7 @@ class _PorterRegistrationarjunoState extends State<PorterRegristationarjuno> {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      'Ketinggian: 3.150 mdpl',
+                      'Ketinggian: 3.339 mdpl',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.black87,
@@ -79,7 +79,8 @@ class _PorterRegistrationarjunoState extends State<PorterRegristationarjuno> {
                     ),
                     SizedBox(height: 12),
                     Text(
-                      'Gunung Sindoro merupakan salah satu gunung tertinggi di Pulau Jawa. Gunung ini menawarkan pemandangan alam yang indah dan jalur pendakian yang menantang.',
+                    'Gunung Arjuno merupakan salah satu gunung berapi yang terletak di Jawa Timur, Indonesia. '
+                    'Gunung ini sangat populer di kalangan pendaki. Beberapa jalur pendakian yang bisa ditempuh untuk mencapai puncak Arjuno adalah melalui basecamp Tretes dan Lawang.',
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.black54,
