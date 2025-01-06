@@ -29,7 +29,7 @@ class TicketPage extends StatelessWidget {
         'lokasi': 'Kabupaten Banyuwangi, Bondowoso, dan Jember',
         'image': '../assets/raung/raung1.png',
         'tarif': {
-          'WNI': {'hariKerja': 15000, 'hariLibur': 20000},
+          'WNI': {'hariKerja': 25000, 'hariLibur': 200000},
           'WNA': {'hariKerja': 25000, 'hariLibur': 35000},
         },
       },      {
