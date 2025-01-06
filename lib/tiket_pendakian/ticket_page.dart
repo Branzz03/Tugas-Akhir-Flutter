@@ -37,7 +37,7 @@ class TicketPage extends StatelessWidget {
         'lokasi': 'Kabupaten Tegal,Pemalang, dan Brebes',
         'image': '../assets/slamet/slamet1.png',
         'tarif': {
-          'WNI': {'hariKerja': 15000, 'hariLibur': 20000},
+          'WNI': {'hariKerja': 20000, 'hariLibur': 300000},
           'WNA': {'hariKerja': 25000, 'hariLibur': 35000},
         },
       },   {
