@@ -77,7 +77,7 @@ class TicketPage extends StatelessWidget {
         'lokasi': 'Kabupaten Karanganyar dan Magetan',
         'image': '../assets/lawu/lawu3.png',
         'tarif': {
-          'WNI': {'hariKerja': 15000, 'hariLibur': 20000},
+          'WNI': {'hariKerja': 30000, 'hariLibur': 20000},
           'WNA': {'hariKerja': 25000, 'hariLibur': 35000},
         },
       },
