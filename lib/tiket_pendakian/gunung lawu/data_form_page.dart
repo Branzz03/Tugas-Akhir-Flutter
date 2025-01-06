@@ -57,7 +57,10 @@ class _DataFormPageStatelawu extends State<DataFormPagelawu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pengisian Data', style: TextStyle(color: Colors.white)),
+        title: const Text(
+          'Pengisian Data',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
@@ -66,13 +69,13 @@ class _DataFormPageStatelawu extends State<DataFormPagelawu> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildTextField('Email', 'Masukkan Email', _emailController),
+              _buildTextField('Email', 'Masukkan Email', _emailController, Icons.email),
               const SizedBox(height: 16),
-              _buildTextField('Nama Lengkap', 'Masukkan Nama Lengkap', _namaLengkapController),
+              _buildTextField('Nama Lengkap', 'Masukkan Nama Lengkap', _namaLengkapController, Icons.person),
               const SizedBox(height: 16),
-              _buildTextField('NIK KTP', 'Masukkan NIK KTP', _nikController),
+              _buildTextField('NIK KTP', 'Masukkan NIK KTP', _nikController, Icons.badge),
               const SizedBox(height: 16),
-              _buildTextField('Nomor Telepon/WA', 'Masukkan Nomor Telepon/WA', _nomorTeleponController),
+              _buildTextField('Nomor Telepon/WA', 'Masukkan Nomor Telepon/WA', _nomorTeleponController, Icons.phone),
               const SizedBox(height: 16),
               const Text('Kewarganegaraan'),
               Row(
@@ -126,20 +129,21 @@ class _DataFormPageStatelawu extends State<DataFormPagelawu> {
                 ],
               ),
               const SizedBox(height: 16),
-              _buildTextField('Daftar Penyakit', 'Masukkan Daftar Penyakit', _penyakitController),
+              _buildTextField('Daftar Penyakit', 'Masukkan Daftar Penyakit', _penyakitController, Icons.medical_services),
               const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: _submitData,
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16), // Menyesuaikan ukuran tombol
-                  backgroundColor: Colors.blue, // Warna tombol
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  backgroundColor: Colors.blue,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8), // Membuat tombol lebih melengkung
+                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    const Icon(Icons.arrow_forward, color: Colors.white),
                     const SizedBox(width: 8),
                     const Text(
                       'Lanjutkan Isi Data',
@@ -159,7 +163,7 @@ class _DataFormPageStatelawu extends State<DataFormPagelawu> {
     );
   }
 
-  Widget _buildTextField(String label, String hint, TextEditingController controller) {
+  Widget _buildTextField(String label, String hint, TextEditingController controller, IconData icon) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -172,6 +176,7 @@ class _DataFormPageStatelawu extends State<DataFormPagelawu> {
           controller: controller,
           decoration: InputDecoration(
             hintText: hint,
+            prefixIcon: Icon(icon),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
           ),
         ),

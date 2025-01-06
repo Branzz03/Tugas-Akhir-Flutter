@@ -34,11 +34,21 @@ class _PilihKetuaPageStatemerbabu extends State<PilihKetuaPagemerbabu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
           'Pilih Ketua',
-        style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
-        backgroundColor: Colors.blueAccent,
+        centerTitle: true,
       ),
       body: Container(
         decoration: const BoxDecoration(

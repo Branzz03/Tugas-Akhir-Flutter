@@ -11,7 +11,7 @@ class TransactionPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Transaksi',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.white,),
         ),
         backgroundColor: Colors.indigo.shade700,
         automaticallyImplyLeading: false,

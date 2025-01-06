@@ -22,7 +22,6 @@ class ProfilePage extends StatelessWidget {
           'Profil Saya',
           style: TextStyle(
             color: Colors.white,
-            fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: Colors.indigo.shade700,

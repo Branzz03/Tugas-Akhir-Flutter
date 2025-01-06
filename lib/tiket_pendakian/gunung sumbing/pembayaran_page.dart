@@ -54,12 +54,12 @@ class _PembayaranPagesumbingState extends State<PembayaranPagesumbing> {
                     const SizedBox(height: 24),
                     ElevatedButton(
                       onPressed: () {
-                                 Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => HomeScreen(),
-                        ),
-                      ); // Kembali ke halaman sebelumnya
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
@@ -182,60 +182,50 @@ class _PembayaranPagesumbingState extends State<PembayaranPagesumbing> {
                   ),
                   child: Column(
                     children: [
-                      RadioListTile(
+                      paymentOption(
                         value: 'GOPAY',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('GOPAY'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '',
+                        imagePath: '../assets/icon/gopay.png',
                       ),
-                      RadioListTile(
+                      paymentOption(
                         value: 'DANA',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('DANA'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '',
+                        imagePath: '../assets/icon/dana.png',
                       ),
-                      RadioListTile(
+                      paymentOption(
                         value: 'OVO',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('OVO'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '',
+                        imagePath: '../assets/icon/ovo.png',
                       ),
-                      RadioListTile(
+                      paymentOption(
                         value: 'ShopeePay',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('ShopeePay'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '',
+                        imagePath: '../assets/icon/shope.png',
                       ),
-                      RadioListTile(
+                      paymentOption(
                         value: 'Basecamp',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('Bayar di Basecamp'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '(Bayar di Basecamp)',
+                        imagePath: '../assets/icon/basecamp.png',
                       ),
                     ],
                   ),
@@ -266,7 +256,7 @@ class _PembayaranPagesumbingState extends State<PembayaranPagesumbing> {
                     icon: const Icon(Icons.payment, size: 24, color: Colors.white),
                     label: const Text(
                       'Bayar',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                      style: TextStyle(fontSize: 18,  color: Colors.white),
                     ),
                   ),
                 ),
@@ -276,5 +266,27 @@ class _PembayaranPagesumbingState extends State<PembayaranPagesumbing> {
         ),
       ),
     );
+  }
+
+ Widget paymentOption({
+  required String value,
+  required String? groupValue, // Tetap nullable
+  required void Function(String?) onChanged,
+  required String title,
+  required String imagePath,
+}) {
+  return RadioListTile(
+    value: value,
+    groupValue: groupValue ?? '', // Pastikan tidak null
+    onChanged: onChanged,
+    title: Row(
+      children: [
+        Image.asset(imagePath, width: 100, height: 100),
+        const SizedBox(width: 11),
+        Text(title),
+      ],
+    ),
+    activeColor: const Color(0xFF2575FC),
+  );
   }
 }

@@ -93,10 +93,21 @@ class _OpenTripPageState extends State<OpenTripPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Open Trip'),
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          'Open Trip',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
+        ),
         centerTitle: true,
-        backgroundColor: Colors.indigo.shade700,
-        elevation: 12,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

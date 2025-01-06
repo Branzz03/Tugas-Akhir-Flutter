@@ -85,16 +85,21 @@ class TicketPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
-          'Pemesanan Tiket',
+          'Tiket Pendakian',
           style: TextStyle(
             color: Colors.white,
             fontSize: 22,
-            fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
       ),
       body: ListView.builder(
         itemCount: gunungJateng.length,

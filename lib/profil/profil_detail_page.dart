@@ -19,14 +19,21 @@ class ProfileDetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
           'Detail Profil',
-          style: TextStyle(color: Colors.white,),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
-        backgroundColor: Colors.blueAccent,
         centerTitle: true,
-        elevation: 10,
-        shadowColor: Colors.indigo.shade200,
       ),
       body: Container(
         decoration: BoxDecoration(

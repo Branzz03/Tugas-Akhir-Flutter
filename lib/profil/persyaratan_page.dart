@@ -7,13 +7,21 @@ class PersyaratanLayananPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
           'Persyaratan Layanan',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.indigo.shade700,
-        elevation: 5,
       ),
       body: Container(
         decoration: BoxDecoration(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'pembayaran_berhasil.dart';
+import 'package:fti_outdor/home_screen.dart';
 
 class PembayaranPagearjuno extends StatefulWidget {
   @override
@@ -9,11 +9,95 @@ class PembayaranPagearjuno extends StatefulWidget {
 class _PembayaranPagearjunoState extends State<PembayaranPagearjuno> {
   String? _selectedPayment;
 
+  void _showOrderDialog(BuildContext context) {
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+      barrierColor: Colors.black54, // Latar belakang transparan
+      transitionDuration: const Duration(milliseconds: 300),
+      pageBuilder: (context, animation, secondaryAnimation) {
+        return Center(
+          child: Material(
+            color: Colors.transparent,
+            child: ScaleTransition(
+              scale: animation,
+              child: AlertDialog(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                content: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Icons.check_circle,
+                      size: 80,
+                      color: Colors.blueAccent,
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'Pesanan Diterima',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      'Pendaftaranmu sudah diterima dan untuk surat pendakian akan segera dikirim lewat EMAIL Anda. Santuy ya...',
+                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 24),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text(
+                        'Kembali',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+      transitionBuilder: (context, animation, secondaryAnimation, child) {
+        return ScaleTransition(
+          scale: CurvedAnimation(
+            parent: animation,
+            curve: Curves.easeInOut,
+          ),
+          child: child,
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pembayaran', style: TextStyle(color: Colors.white),),
+        title: const Text(
+          'Pembayaran',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.blueAccent,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -24,7 +108,7 @@ class _PembayaranPagearjunoState extends State<PembayaranPagearjuno> {
       ),
       body: Container(
         decoration: const BoxDecoration(
-            color: Colors.white,
+          color: Colors.white,
         ),
         child: SingleChildScrollView(
           child: Padding(
@@ -35,7 +119,7 @@ class _PembayaranPagearjunoState extends State<PembayaranPagearjuno> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12.0),
                   child: Image.network(
-                    '../assets/arjuno/arjuno1.png', // Ganti dengan URL gambar yang sesuai
+                    '../assets/sumbing/sumbing3.png', // Ganti dengan URL gambar yang sesuai
                     height: 200,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -97,60 +181,50 @@ class _PembayaranPagearjunoState extends State<PembayaranPagearjuno> {
                   ),
                   child: Column(
                     children: [
-                      RadioListTile(
+                      paymentOption(
                         value: 'GOPAY',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('GOPAY'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '',
+                        imagePath: '../assets/icon/gopay.png',
                       ),
-                      RadioListTile(
+                      paymentOption(
                         value: 'DANA',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('DANA'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '',
+                        imagePath: '../assets/icon/dana.png',
                       ),
-                      RadioListTile(
+                      paymentOption(
                         value: 'OVO',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('OVO'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '',
+                        imagePath: '../assets/icon/ovo.png',
                       ),
-                      RadioListTile(
+                      paymentOption(
                         value: 'ShopeePay',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('ShopeePay'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '',
+                        imagePath: '../assets/icon/shope.png',
                       ),
-                      RadioListTile(
+                      paymentOption(
                         value: 'Basecamp',
                         groupValue: _selectedPayment,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedPayment = value.toString();
-                          });
-                        },
-                        title: const Text('Bayar di Basecamp'),
-                        activeColor: const Color(0xFF2575FC),
+                        onChanged: (value) => setState(() {
+                          _selectedPayment = value.toString();
+                        }),
+                        title: '(Bayar di Basecamp)',
+                        imagePath: '../assets/icon/basecamp.png',
                       ),
                     ],
                   ),
@@ -168,13 +242,8 @@ class _PembayaranPagearjunoState extends State<PembayaranPagearjuno> {
                         );
                         return;
                       }
-                      // Arahkan ke halaman Pembayaran Berhasil setelah memilih metode pembayaran
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => PembayaranBerhasilPagearjuno(),
-                        ),
-                      );
+                      // Tampilkan dialog pembayaran berhasil
+                      _showOrderDialog(context);
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 16),
@@ -186,10 +255,9 @@ class _PembayaranPagearjunoState extends State<PembayaranPagearjuno> {
                     icon: const Icon(Icons.payment, size: 24, color: Colors.white),
                     label: const Text(
                       'Bayar',
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                      style: TextStyle(fontSize: 18,  color: Colors.white),
                     ),
-                  )
-
+                  ),
                 ),
               ],
             ),
@@ -197,5 +265,27 @@ class _PembayaranPagearjunoState extends State<PembayaranPagearjuno> {
         ),
       ),
     );
+  }
+
+ Widget paymentOption({
+  required String value,
+  required String? groupValue, // Tetap nullable
+  required void Function(String?) onChanged,
+  required String title,
+  required String imagePath,
+}) {
+  return RadioListTile(
+    value: value,
+    groupValue: groupValue ?? '', // Pastikan tidak null
+    onChanged: onChanged,
+    title: Row(
+      children: [
+        Image.asset(imagePath, width: 100, height: 100),
+        const SizedBox(width: 11),
+        Text(title),
+      ],
+    ),
+    activeColor: const Color(0xFF2575FC),
+  );
   }
 }

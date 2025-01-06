@@ -77,7 +77,10 @@ void _navigateToPilihKetuaPage() {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Isi Data Pemesan', style: TextStyle(color: Colors.white),),
+        title: const Text(
+          'Isi Data Pemesan',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
@@ -90,17 +93,25 @@ void _navigateToPilihKetuaPage() {
               decoration: BoxDecoration(
                 color: Colors.orange[100],
                 borderRadius: BorderRadius.circular(8),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
               ),
               child: Row(
                 children: [
-                  const Icon(Icons.warning, color: Colors.orange),
-                  const SizedBox(width: 8),
+                  const Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 30),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: Text(
-                      'Pengisian data harus sesuai identitas apabila tidak sesuai dengan identitas tidak terlindungi asuransi',
+                      'Pengisian data harus sesuai identitas. Data yang tidak sesuai tidak terlindungi asuransi.',
                       style: TextStyle(
                         fontFamily: 'Arial',
-                        color: Colors.black,
+                        color: Colors.black87,
                       ),
                     ),
                   ),
@@ -117,27 +128,45 @@ void _navigateToPilihKetuaPage() {
                     margin: const EdgeInsets.only(bottom: 16),
                     padding: const EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
-                      color: Colors.lightBlue[100],
-                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 2,
+                          blurRadius: 4,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          passenger['name'] ?? 'Data Pemesan ${index + 1}',
-                          style: TextStyle(
-                            fontFamily: 'Arial',
-                            fontSize: 16,
-                            color: Colors.black,
-                          ),
+                        Row(
+                          children: [
+                            const Icon(Icons.person, color: Colors.blueAccent, size: 30),
+                            const SizedBox(width: 10),
+                            Text(
+                              passenger['name'] ?? 'Data Pemesan ${index + 1}',
+                              style: const TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ],
                         ),
-                        TextButton(
+                        TextButton.icon(
                           onPressed: () => _navigateToFormPage(index),
-                          child: Text(
+                          icon: Icon(
+                            passenger['name'] == null ? Icons.edit : Icons.check_circle,
+                            color: Colors.blueAccent,
+                          ),
+                          label: Text(
                             passenger['name'] == null ? 'Isi Data' : 'Edit Data',
                             style: const TextStyle(
                               fontFamily: 'Arial',
-                              color: Colors.blue,
+                              color: Colors.blueAccent,
                             ),
                           ),
                         ),
@@ -147,13 +176,17 @@ void _navigateToPilihKetuaPage() {
                 },
               ),
             ),
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: _isDataFilled() ? _navigateToPilihKetuaPage : null,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
               ),
-              child: const Text(
+              icon: const Icon(Icons.arrow_forward, color: Colors.white),
+              label: const Text(
                 'Lanjutkan Pilih Ketua',
                 style: TextStyle(
                   fontFamily: 'Arial',
