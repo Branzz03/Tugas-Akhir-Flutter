@@ -35,8 +35,21 @@ class _EatAndStayPageState extends State<CampingPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Eat and Stay'),
-        backgroundColor: Colors.blueAccent,
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          'Camping',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
+        ),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(

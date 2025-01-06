@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'gunung slamet/regristation.dart';
 import 'package:intl/intl.dart';
-import 'regristation.dart'; // Halaman detail Gunung Merbabu
+import 'gunung arjuno/regristation.dart';
+import 'gunung lawu/regristation.dart';
+import 'gunung semeru/regristation.dart';
+import 'gunung sindoro/regristation.dart';
+import 'gunung raung/regristation.dart';
+import 'gunung sumbing/regristation.dart';
+import 'gunung welirang/regristation.dart';
+ // Halaman detail Gunung Merbabu
 
 class PorterGuiddePage extends StatefulWidget {
   const PorterGuiddePage({super.key});
@@ -126,49 +134,49 @@ class _PorterGuiddePageState extends State<PorterGuiddePage> with SingleTickerPr
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PorterRegristation()),
+                        builder: (context) => const PorterRegristationsindoro()),
                   );
                 } else if (gunung['name'] == 'Gunung Sumbing') {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PorterRegristation()),
+                        builder: (context) => const PorterRegristationsumbing()),
                   );
                 } else if (gunung['name'] == 'Gunung Lawu') {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PorterRegristation()),
+                        builder: (context) => const PorterRegristationlawu()),
                   );
                 } else if (gunung['name'] == 'Gunung Slamet') {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PorterRegristation()),
+                        builder: (context) => const PorterRegristationslamet()),
                   );
                 } else if (gunung['name'] == 'Gunung Arjuno') {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PorterRegristation()),
+                        builder: (context) => const PorterRegristationarjuno()),
                   );
                 } else if (gunung['name'] == 'Gunung Welirang') {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PorterRegristation()),
+                        builder: (context) => const PorterRegristationwelirang()),
                   );
                 } else if (gunung['name'] == 'Gunung Raung') {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PorterRegristation()),
+                        builder: (context) => const PorterRegristationraung()),
                   );
                 } else if (gunung['name'] == 'Gunung Semeru') {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PorterRegristation()),
+                        builder: (context) => const PorterRegristationsemeru()),
                   );
                 }
               },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fti_outdor/blog/blog_page.dart';
+import 'package:fti_outdor/event/event.dart';
 import 'package:fti_outdor/keamanan/keamanan_page.dart';
 import 'tiket_pendakian/ticket_page.dart'; 
 import 'travel_pendakian/travel_page.dart';
@@ -109,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                   _buildMenuItem(context, Icons.group_outlined, 'Open Trip',  OpenTripPage()),
                   _buildMenuItem(context, Icons.restaurant_rounded, 'Eat and Stay', const EatAndStayPage()),
                   _buildMenuItem(context, Icons.emoji_people_rounded, 'Camping', const CampingPage()),
-                  _buildMenuItem(context, Icons.event_rounded, 'Event', null),
+                  _buildMenuItem(context, Icons.event_rounded, 'Event', const EventPage()),
                 ],
               ),
             ),

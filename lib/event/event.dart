@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class EatAndStayPage extends StatefulWidget {
-  const EatAndStayPage({super.key});
+class EventPage extends StatefulWidget {
+  const EventPage({super.key});
 
   @override
-  _EatAndStayPageState createState() => _EatAndStayPageState();
+  _EventPageState createState() => _EventPageState();
 }
 
-class _EatAndStayPageState extends State<EatAndStayPage>
+class _EventPageState extends State<EventPage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
@@ -43,7 +43,7 @@ class _EatAndStayPageState extends State<EatAndStayPage>
           },
         ),
         title: const Text(
-          'Eat And Stay',
+          'Event',
           style: TextStyle(
             color: Colors.white,
             fontSize: 22,

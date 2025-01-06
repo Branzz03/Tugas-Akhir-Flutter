@@ -42,8 +42,8 @@ class _FormRegistrationPageStatesumbing extends State<FormRegistrationPagesumbin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
-        backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+      appBar: AppBar(
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
@@ -51,9 +51,13 @@ class _FormRegistrationPageStatesumbing extends State<FormRegistrationPagesumbin
           },
         ),
         title: const Text(
-          'Form Registrasi',
-          style: TextStyle(color: Colors.white),
+          'Registrasi',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(

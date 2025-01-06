@@ -147,7 +147,7 @@ class _PembayaranPagewelirangState extends State<PembayaranPagewelirang> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        'Registrasi Pendakian Gn. Sindoro',
+                        'Registrasi Pendakian Gn. Welirang',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -156,6 +156,8 @@ class _PembayaranPagewelirangState extends State<PembayaranPagewelirang> {
                       ),
                       SizedBox(height: 8),
                       Text('Atas nama : Zaid Akmal'),
+                      Text('Basecamp Naik : Basecamp Tretes'),
+                      Text('Basecamp Turun : Basecamp Tretes'),
                       Text('Tanggal naik : 10 Agustus 2024'),
                       Text('Tanggal turun : 12 Agustus 2024'),
                     ],

@@ -94,17 +94,21 @@ class _PembayaranPagesindoroState extends State<PembayaranPagesindoro> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Pembayaran',
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Colors.blueAccent,
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
+        title: const Text(
+          'Pembayaran',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
+        ),
+        centerTitle: true,
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -119,7 +123,7 @@ class _PembayaranPagesindoroState extends State<PembayaranPagesindoro> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12.0),
                   child: Image.network(
-                    '../assets/sumbing/sumbing3.png', // Ganti dengan URL gambar yang sesuai
+                    '../assets/sindoro/sindoro1.png', // Ganti dengan URL gambar yang sesuai
                     height: 200,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -152,6 +156,8 @@ class _PembayaranPagesindoroState extends State<PembayaranPagesindoro> {
                       ),
                       SizedBox(height: 8),
                       Text('Atas nama : Zaid Akmal'),
+                      Text('Basecamp Naik : Basecamp Kledung'),
+                      Text('Basecamp Turun : Basecamp Alang Alang Sewu'),
                       Text('Tanggal naik : 10 Agustus 2024'),
                       Text('Tanggal turun : 12 Agustus 2024'),
                     ],

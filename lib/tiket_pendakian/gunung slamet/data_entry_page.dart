@@ -74,11 +74,21 @@ class _DataEntryPageStateslamet extends State<DataEntryPageslamet> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
           'Isi Data Pemesan',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
         ),
-        backgroundColor: Colors.blueAccent,
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

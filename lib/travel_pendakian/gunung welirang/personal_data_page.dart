@@ -102,7 +102,7 @@ class PersonalDataFormPagewelirang extends StatelessWidget {
                           ),
                           const SizedBox(height: 8),
                           const Text(
-                            'Pendaftaranmu sudah diterima dan untuk surat pendakian akan segera dikirim lewat EMAIL Anda. Santuy ya...',
+                            'Pesananmu sudah diterima dan untuk Pengemudi akan segera Menghubungi Anda. Di tunggu ya...',
                             textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 16),
                           ),

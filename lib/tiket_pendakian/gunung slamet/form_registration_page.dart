@@ -44,10 +44,21 @@ class _FormRegistrationPageStateslamet extends State<FormRegistrationPageslamet>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Form Registrasi',
-        style: TextStyle(color: Colors.white),),
-        backgroundColor: Colors.blueAccent,
-        elevation: 0,
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: const Text(
+          'Registrasi',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
+        ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Column(

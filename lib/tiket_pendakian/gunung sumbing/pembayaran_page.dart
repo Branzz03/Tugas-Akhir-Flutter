@@ -95,17 +95,21 @@ class _PembayaranPagesumbingState extends State<PembayaranPagesumbing> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Pembayaran',
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Colors.blueAccent,
+                backgroundColor: const Color(0xFF1565C0), // Warna biru navbar
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
+        title: const Text(
+          'Pembayaran',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
+        ),
+        centerTitle: true,
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -120,7 +124,7 @@ class _PembayaranPagesumbingState extends State<PembayaranPagesumbing> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12.0),
                   child: Image.network(
-                    '../assets/sumbing/sumbing3.png', // Ganti dengan URL gambar yang sesuai
+                    '../assets/sumbing/sumbing2.png', // Ganti dengan URL gambar yang sesuai
                     height: 200,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -144,7 +148,7 @@ class _PembayaranPagesumbingState extends State<PembayaranPagesumbing> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        'Registrasi Pendakian Gn. Sindoro',
+                        'Registrasi Pendakian Gn. Sumbing',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -154,6 +158,8 @@ class _PembayaranPagesumbingState extends State<PembayaranPagesumbing> {
                       SizedBox(height: 8),
                       Text('Atas nama : Zaid Akmal'),
                       Text('Tanggal naik : 10 Agustus 2024'),
+                      Text('Basecamp Naik : Basecamp Gajah Mungkur'),
+                      Text('Basecamp Turun : Basecamp Gajah Mungkur'),
                       Text('Tanggal turun : 12 Agustus 2024'),
                     ],
                   ),

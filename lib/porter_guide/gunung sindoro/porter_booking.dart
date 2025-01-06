@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../home_screen.dart';
+import 'package:fti_outdor/home_screen.dart';
 
-class PorterDetailPage extends StatelessWidget {
+class PorterDetailPagesindoro extends StatelessWidget {
   final String name;
 
-  const PorterDetailPage({Key? key, required this.name}) : super(key: key);
+  const PorterDetailPagesindoro({Key? key, required this.name}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

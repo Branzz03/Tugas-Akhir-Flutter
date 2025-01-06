@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'porter_booking.dart';
 
-class PorterRegristation extends StatefulWidget {
-  const PorterRegristation({super.key});
+class PorterRegristationwelirang extends StatefulWidget {
+  const PorterRegristationwelirang({super.key});
 
   @override
-  _PorterRegistrationState createState() => _PorterRegistrationState();
+  _PorterRegistrationwelirangState createState() => _PorterRegistrationwelirangState();
 }
 
-class _PorterRegistrationState extends State<PorterRegristation> {
+class _PorterRegistrationwelirangState extends State<PorterRegristationwelirang> {
   String selectedType = 'Porter'; // Default pilihan adalah Porter
 
   // Daftar nama porter dan guide
@@ -195,7 +195,7 @@ class _PorterRegistrationState extends State<PorterRegristation> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => PorterDetailPage(
+                                    builder: (context) => PorterDetailPagewelirang(
                                       name: name,
                                     ),
                                   ),
