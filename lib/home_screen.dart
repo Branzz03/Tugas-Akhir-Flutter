@@ -13,10 +13,63 @@ import 'cuaca/weather_page.dart';
 import 'eat dan stay/eat_and_stay_page.dart';
 import 'camping/camping_page.dart';
 import 'tutorial/tutorial_page.dart';
+import 'dart:async';
 
-class HomeScreen extends StatelessWidget {
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-  
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final PageController _pageController = PageController();
+  final List<String> _images = [
+    '../assets/homepage/gunung1.png',
+    '../assets/homepage/gunung2.png',
+    '../assets/homepage/gunung3.png',
+    '../assets/homepage/gunung4.jpg',
+    '../assets/homepage/gunung5.png',
+    '../assets/homepage/gunung6.png',
+    '../assets/homepage/gunung7.png',
+    '../assets/homepage/gunung8.png',
+    '../assets/homepage/gunung9.png',
+    '../assets/homepage/gunung10.png',
+  ];
+
+  int _currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _autoScrollImages();
+  }
+
+  void _autoScrollImages() {
+    Future.delayed(const Duration(seconds: 3), () {
+      if (_pageController.hasClients) {
+        setState(() {
+          _currentPage++;
+          if (_currentPage >= _images.length) {
+            _currentPage = 0; // Kembali ke gambar pertama
+          }
+        });
+        _pageController.animateToPage(
+          _currentPage,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+        _autoScrollImages(); // Panggil fungsi secara rekursif
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +79,10 @@ class HomeScreen extends StatelessWidget {
         title: Row(
           children: [
             Image.asset(
-              '../assets/logo.png', // Path logo
-              height: 40, // Ukuran tinggi logo
+              '../assets/logo.png',
+              height: 40,
             ),
-            const SizedBox(width: 10), // Jarak antara logo dan teks
+            const SizedBox(width: 10),
             const Text(
               'JAVA MOUNTAIN',
               style: TextStyle(
@@ -44,7 +97,7 @@ class HomeScreen extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: Colors.indigo.shade700,
-           automaticallyImplyLeading: false,
+        automaticallyImplyLeading: false,
         elevation: 12,
         shadowColor: Colors.indigo.withOpacity(0.7),
         actions: [
@@ -58,17 +111,22 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Gambar Header
+            // Gambar Header dengan Auto-Slide
             Stack(
               children: [
-                Container(
-                  width: double.infinity,
+                SizedBox(
                   height: 200,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('../assets/gunung1.png'),
-                      fit: BoxFit.cover,
-                    ),
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: _images.length,
+                    itemBuilder: (context, index) {
+                      return Image.asset(
+                        _images[index],
+                        width: double.infinity,
+                        height: 200,
+                        fit: BoxFit.cover,
+                      );
+                    },
                   ),
                 ),
                 const Positioned(
@@ -143,7 +201,7 @@ class HomeScreen extends StatelessWidget {
                     height: 150,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('../assets/gunung1.png'),
+                        image: AssetImage('../assets/homepage/gunung2.png'),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(20)),

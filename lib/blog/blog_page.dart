@@ -28,7 +28,7 @@ class BlogPage extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.network(
-                  '../assets/home/blog.png',
+                  '../assets/blog/blog.png',
                   height: 200,
                   width: double.infinity,
                   fit: BoxFit.cover,

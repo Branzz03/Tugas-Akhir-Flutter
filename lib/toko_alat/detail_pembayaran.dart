@@ -286,8 +286,8 @@ class _FormPembelianState extends State<FormPembelian> {
               children: [
                 Image.asset(
                   widget.product['image'],
-                  width: 300,
-                  height: 300,
+                  width: 250,
+                  height: 250,
                   fit: BoxFit.cover,
                 ),
                 const SizedBox(width: 10),
