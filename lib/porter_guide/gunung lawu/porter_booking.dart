@@ -267,7 +267,7 @@ void _showOrderDialog(BuildContext context, String name) {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    'Pendaftaranmu sudah diterima dan untuk surat pendakian akan segera dikirim lewat EMAIL Anda. Santuy ya...',
+                    'Pesanan mu sudah diterima dan Porter Akan Segera Menghubungi anda. Di tunggu ya...',
                     style: TextStyle(fontSize: 16, color: Colors.black),
                     textAlign: TextAlign.center,
                   ),
