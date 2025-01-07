@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'porter_booking.dart';
+import 'guide_booking.dart';
 
 class PorterRegristationsemeru extends StatefulWidget {
   const PorterRegristationsemeru({super.key});
@@ -193,33 +194,44 @@ class _PorterRegistrationsemeruState extends State<PorterRegristationsemeru> {
                         ),
                       ),
                       trailing: isAvailable
-                          ? ElevatedButton(
-                              onPressed: () {
-                                // Navigasi ke halaman detail porter/guide
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => PorterDetailPagesemeru(
-                                      name: name,
-                                    ),
+                      ? ElevatedButton(
+                          onPressed: () {
+                            // Navigasi ke halaman detail porter atau guide
+                            if (selectedType == 'Porter') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PorterDetailPagesemeru(
+                                    name: name,
                                   ),
-                                );
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.indigo.shade600,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                              ),
-                              child: const Text(
-                                'Pesan',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            )
-                          : const Icon(
-                              Icons.block,
-                              color: Colors.red,
+                              );
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => GuideDetailPagesemeru(
+                                    name: name,
+                                  ),
+                                ),
+                              );
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.indigo.shade600,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
                             ),
+                          ),
+                          child: const Text(
+                            'Pesan',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        )
+                      : const Icon(
+                          Icons.block,
+                          color: Colors.red,
+                        ),
                     ),
                   );
                 },

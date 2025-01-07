@@ -223,7 +223,7 @@ class _FormPembelianState extends State<FormPembelian> {
                     },
                     icon: const Icon(Icons.print,
                     color: Colors.yellow,),
-                    label: const Text("Cetak Tagihan",
+                    label: const Text("Cetak Tagihan (pdf)",
                     style: TextStyle(color: Colors.white)),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.indigo, // Warna biru untuk tombol Cetak Tagihan

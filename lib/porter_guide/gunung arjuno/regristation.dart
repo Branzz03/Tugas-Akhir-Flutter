@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'porter_booking.dart';
+import 'guide_booking.dart';
 
 class PorterRegristationarjuno extends StatefulWidget {
   const PorterRegristationarjuno({super.key});
@@ -9,7 +10,8 @@ class PorterRegristationarjuno extends StatefulWidget {
 }
 
 class _PorterRegistrationarjunoState extends State<PorterRegristationarjuno> {
-  String selectedType = 'Porter'; // Default pilihan adalah Porter
+  String selectedType = 'Porter';
+   // Default pilihan adalah Porter
 
   // Daftar nama porter dan guide
   final List<String> porterNames = [
@@ -194,33 +196,44 @@ class _PorterRegistrationarjunoState extends State<PorterRegristationarjuno> {
                         ),
                       ),
                       trailing: isAvailable
-                          ? ElevatedButton(
-                              onPressed: () {
-                                // Navigasi ke halaman detail porter/guide
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => PorterDetailPagearjuno(
-                                      name: name,
-                                    ),
+                      ? ElevatedButton(
+                          onPressed: () {
+                            // Navigasi ke halaman detail porter atau guide
+                            if (selectedType == 'Porter') {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PorterDetailPagearjuno(
+                                    name: name,
                                   ),
-                                );
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.indigo.shade600,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                              ),
-                              child: const Text(
-                                'Pesan',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            )
-                          : const Icon(
-                              Icons.block,
-                              color: Colors.red,
+                              );
+                            } else {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => GuideDetailPagearjuno(
+                                    name: name,
+                                  ),
+                                ),
+                              );
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.indigo.shade600,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
                             ),
+                          ),
+                          child: const Text(
+                            'Pesan',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        )
+                      : const Icon(
+                          Icons.block,
+                          color: Colors.red,
+                        ),
                     ),
                   );
                 },
